@@ -1,4 +1,7 @@
-com\hftang\ssm\dao\IProductDao.class
 com\hftang\ssm\dao\IOrderDao.class
+com\hftang\ssm\dao\IUserDao.class
+com\hftang\ssm\dao\IPermissionDao.class
+com\hftang\ssm\dao\IRoleDao.class
+com\hftang\ssm\dao\IProductDao.class
 com\hftang\ssm\dao\ITravellerDao.class
 com\hftang\ssm\dao\IMemberDao.class

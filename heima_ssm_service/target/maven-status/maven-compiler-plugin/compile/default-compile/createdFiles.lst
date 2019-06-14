@@ -1,4 +1,6 @@
+com\hftang\ssm\service\impl\UserServiceImpl.class
 com\hftang\ssm\service\IProductService.class
 com\hftang\ssm\service\impl\ProductServiceImpl.class
 com\hftang\ssm\service\IOrdersService.class
+com\hftang\ssm\service\IUserService.class
 com\hftang\ssm\service\impl\OrdersServiceImpl.class

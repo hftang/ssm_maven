@@ -1,4 +1,7 @@
 D:\javaweb\heima_ssm\heima_ssm_dao\src\main\java\com\hftang\ssm\dao\IOrderDao.java
 D:\javaweb\heima_ssm\heima_ssm_dao\src\main\java\com\hftang\ssm\dao\IMemberDao.java
+D:\javaweb\heima_ssm\heima_ssm_dao\src\main\java\com\hftang\ssm\dao\IRoleDao.java
 D:\javaweb\heima_ssm\heima_ssm_dao\src\main\java\com\hftang\ssm\dao\ITravellerDao.java
+D:\javaweb\heima_ssm\heima_ssm_dao\src\main\java\com\hftang\ssm\dao\IPermissionDao.java
 D:\javaweb\heima_ssm\heima_ssm_dao\src\main\java\com\hftang\ssm\dao\IProductDao.java
+D:\javaweb\heima_ssm\heima_ssm_dao\src\main\java\com\hftang\ssm\dao\IUserDao.java

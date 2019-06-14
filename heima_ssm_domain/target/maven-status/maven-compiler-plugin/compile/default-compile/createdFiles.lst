@@ -1,4 +1,7 @@
 com\hftang\ssm\domain\Member.class
+com\hftang\ssm\domain\UserInfo.class
+com\hftang\ssm\domain\Permission.class
 com\hftang\ssm\domain\Orders.class
+com\hftang\ssm\domain\Role.class
 com\hftang\ssm\domain\Product.class
 com\hftang\ssm\domain\Traveller.class
