@@ -1,5 +1,6 @@
 package com.hftang.ssm.dao;
 
+import com.hftang.ssm.domain.Role;
 import com.hftang.ssm.domain.UserInfo;
 import org.apache.ibatis.annotations.*;
 
@@ -38,7 +39,15 @@ public interface IUserDao {
             @Result(property = "password", column = "password"),
             @Result(property = "phoneNum", column = "phoneNum"),
             @Result(property = "status", column = "status"),
-            @Result(property = "roles",column = "id",javaType = java.util.List.class,many = @Many(select = "com.hftang.ssm.dao.IRoleDao.findRoleByUserIds"))
+            @Result(property = "roles", column = "id", javaType = java.util.List.class, many = @Many(select = "com.hftang.ssm.dao.IRoleDao.findRoleByUserIds"))
     })
     UserInfo findById(String userId);
+
+    //查找其他
+    @Select("select * from role where id not in ( select roleId from users_role where userId = #{usrid})")
+    List<Role> findOtherRoles(String usrid);
+
+    //给用户添加角色
+    @Insert("insert into users_role(userId,roleId) values ( #{userId},#{roleId})")
+    void addUserToRole(@Param("userId") String userId, @Param("roleId") String roleId);
 }

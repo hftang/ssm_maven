@@ -1,5 +1,6 @@
 package com.hftang.ssm.controller;
 
+import com.hftang.ssm.domain.Role;
 import com.hftang.ssm.domain.UserInfo;
 import com.hftang.ssm.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,5 +51,35 @@ public class UserController {
         mv.addObject("user", userInfo);
 
         return mv;
+    }
+
+    //查询用户以及用户可以添加的角色
+    @RequestMapping("/findUserByIdAndAllRole.do")
+    public ModelAndView findUserByIdAndAllRole(@RequestParam(name = "id", required = true) String usrid) {
+        ModelAndView mv = new ModelAndView();
+        //根据id查询用户
+        UserInfo userInfo = iUserService.findById(usrid);
+        //根据用户id 查询所能添加的权限
+        List<Role> otherRoles = iUserService.findOtherRoles(usrid);
+
+        mv.addObject("user", userInfo);
+        mv.addObject("roleList", otherRoles);
+
+        mv.setViewName("user-role-add");
+        return mv;
+    }
+
+    //添加用户角色
+    @RequestMapping("/addRoleToUser.do")
+    public String addUserToRoles(@RequestParam(name = "userId", required = true) String userId,
+                                 @RequestParam(name = "ids", required = true) String[] roles) {
+
+        iUserService.addUserToRoles(userId,roles);
+
+
+
+
+        return "redirect:findAll.do";
+
     }
 }

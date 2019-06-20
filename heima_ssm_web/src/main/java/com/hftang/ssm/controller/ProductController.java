@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 /**
@@ -24,6 +25,7 @@ public class ProductController {
 
     //查询所有产品
     @RequestMapping("/findAll.do")
+    @RolesAllowed("ADMINS")
     public ModelAndView findAll() throws Exception {
         ModelAndView modelAndView = new ModelAndView();
         List<Product> list = iProductService.findAll();
@@ -35,10 +37,7 @@ public class ProductController {
     //保存产品
     @RequestMapping("/save.do")
     public String saveProduct(Product product) throws Exception {
-
         iProductService.save(product);
-
         return "redirect:findAll.do";
-
     }
 }

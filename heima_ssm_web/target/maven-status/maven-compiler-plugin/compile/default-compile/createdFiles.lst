@@ -1,3 +1,6 @@
 com\hftang\ssm\controller\UserController.class
+com\hftang\ssm\controller\RoleController.class
 com\hftang\ssm\controller\OrdersController.class
+com\hftang\ssm\controller\LogAop.class
 com\hftang\ssm\controller\ProductController.class
+com\hftang\ssm\controller\PermissionController.class

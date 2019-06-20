@@ -1,6 +1,12 @@
+com\hftang\ssm\service\impl\RoleServiceImpl.class
+com\hftang\ssm\service\PermissionService.class
+com\hftang\ssm\service\impl\ProductServiceImpl.class
+com\hftang\ssm\service\IRoleService.class
+com\hftang\ssm\service\impl\OrdersServiceImpl.class
+com\hftang\ssm\service\impl\PermissionServiceImpl.class
 com\hftang\ssm\service\impl\UserServiceImpl.class
 com\hftang\ssm\service\IProductService.class
-com\hftang\ssm\service\impl\ProductServiceImpl.class
+com\hftang\ssm\service\ISysLogService.class
 com\hftang\ssm\service\IOrdersService.class
 com\hftang\ssm\service\IUserService.class
-com\hftang\ssm\service\impl\OrdersServiceImpl.class
+com\hftang\ssm\service\impl\ISysLogServiceImpl.class

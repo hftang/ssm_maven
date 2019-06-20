@@ -1,5 +1,6 @@
 package com.hftang.ssm.service;
 
+import com.hftang.ssm.domain.Role;
 import com.hftang.ssm.domain.UserInfo;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
@@ -19,4 +20,8 @@ public interface IUserService extends UserDetailsService {
 
     //查看user详情
     UserInfo findById(String userId);
+
+    List<Role> findOtherRoles(String usrid);
+
+    void addUserToRoles(String userId, String[] roles);
 }

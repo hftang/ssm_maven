@@ -43,7 +43,7 @@ public class UserServiceImpl implements IUserService {
             e.printStackTrace();
         }
         //这个User 是由springsecurity提供的
-        //User user = new User(userInfo.getUsername(), "{noop}" + userInfo.getPassword(), getAuthority(userInfo.getRoles()));
+//        User user = new User(userInfo.getUsername(), "{noop}" + userInfo.getPassword(), getAuthority(userInfo.getRoles()));
         User user = new User(userInfo.getUsername(), userInfo.getPassword(), userInfo.getStatus() == 0 ? false : true, true, true, true, getAuthority(userInfo.getRoles()));
         return user;
     }
@@ -75,5 +75,24 @@ public class UserServiceImpl implements IUserService {
     public UserInfo findById(String userId) {
 
         return iUserDao.findById(userId);
+    }
+
+    @Override
+    public List<Role> findOtherRoles(String usrid) {
+
+
+        return iUserDao.findOtherRoles(usrid);
+    }
+
+    //给用户添加角色
+    @Override
+    public void addUserToRoles(String userId, String[] roles) {
+
+        //给用户添加角色
+        for (int i = 0; i < roles.length; i++) {
+            String role = roles[i];
+            iUserDao.addUserToRole(userId,role);
+        }
+
     }
 }
